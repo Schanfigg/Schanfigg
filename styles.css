@@ -1,0 +1,79 @@
+.menu-container {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: width 0.3s ease, height 0.3s ease;
+  overflow: hidden;
+}
+
+.menu {
+  position: absolute;
+  top: 50px; /* Startet unter dem Hamburger-Icon */
+  left: 0;
+  right: 0; /* Sorgt dafür, dass das Menü zentriert ist */
+  display: none;
+  flex-direction: column;
+  justify-content: center; /* Zentriert die Menüpunkte vertikal */
+  align-items: center; /* Zentriert die Menüpunkte horizontal */
+  background-color: rgba(0, 0, 0, 0); /* Leicht transparenter Hintergrund */
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(-100%); /* Initial oberhalb des Sichtbereichs */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 20px; /* Fügt horizontalen Abstand hinzu */
+  text-align: center;
+  width: 100%; /* Stellt sicher, dass die Links die volle Breite des Menüs einnehmen */
+}
+
+.menu a:hover {
+  background-color: #ddd;
+}
+
+.hamburger {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: left 0.3s ease;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.menu-container.active {
+  width: 200px; /* Vergrößert die Breite für das geöffnete Menü */
+  height: 230px; /* Vergrößert die Höhe für das geöffnete Menü */
+  /* Pro Dorf sind es 30px */
+}
+
+.menu-container.active .menu {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0%); /* Verschiebt das Menü in den sichtbaren Bereich */
+}
+
+.menu-container.active .hamburger {
+  left: 160px; /* Verschiebt die Balken nach rechts im geöffneten Zustand */
+}

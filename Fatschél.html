@@ -1,75 +1,52 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fatschél</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="script.js"></script>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
 
-        .iframe-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Stellt sicher, dass das iFrame hinter anderen Inhalten bleibt */
-        }
+  .iframe-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 
-        .menu {
-            position: fixed;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparentes Schwarz */
-            color: white;
-            padding: 20px;
-            border-radius: 10px 0 0 10px; /* Abgerundete Ecken auf der linken Seite */
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Schatten fÃ¼r Tiefe */
-            text-align: center;
-            z-index: 1000; /* Stellt sicher, dass das MenÃ¼ Ã¼ber dem iFrame angezeigt wird */
-        }
-
-        .menu a {
-            display: block;
-            margin: 10px 0;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .menu a:hover {
-            color: #FFD700; /* Goldfarbe beim Hover */
-            transform: translateX(-10px); /* Verschiebung nach links beim Hover */
-        }
-
-        .menu-header {
-            font-size: 20px;
-            margin-bottom: 15px;
-            font-weight: bold;
-            border-bottom: 2px solid white;
-            padding-bottom: 10px;
-        }
-    </style>
+  .content {
+    position: relative;
+    z-index: 1;
+    /* Add your content styling here */
+  }
+</style>
 </head>
 <body>
 
-<div class="menu">
-    <div class="menu-header">Menü</div>
-<a href="https://www.schanfigg.com">Home</a>
-    <a href="https://www.schanfigg.com/Bergkirchli.html">Bergkirchli</a>
-    <a href="https://www.schanfigg.com/Innerarosa.html">Innerarosa</a>
-    <a href="https://www.schanfigg.com/KircheSt.Peter.html">Kirche St.Peter</a>
-    <a href="https://www.schanfigg.com/St.Peter.html">St.Peter</a>
-    <!-- FÃ¼gen Sie weitere Links hinzu, wie benÃ¶tigt -->
+<iframe src="https://lumalabs.ai/embed/797e0e4d-bbd4-4cbb-9363-1c744a3f3a1e?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false" class="iframe-background" frameborder="0" title="luma embed" style="border: none;"></iframe>
+
+<div class="content">
+  <div id="menu-container" class="menu-container">
+    <div id="menu" class="menu">
+      <a href="https://schanfigg.com">Home</a>
+      <a href="https://schanfigg.com/Bergkirchli.html">Bergkirchli</a>
+      <a href="https://schanfigg.com/Innerarosa.html">Innerarosa</a>
+      <a href="Chttps://schanfigg.com/KircheSt.Peter.html">Kirche St.Peter</a>
+      <a href="https://schanfigg.com/St.Peter.html">St.Peter</a>
+    </div>
+    <div id="hamburger" class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
 </div>
 
 </body>
 </html>
-
-<iframe src="https://lumalabs.ai/embed/1d7496d5-262a-4ba8-b8c7-fae3cf98ce4e?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false" width="100%" height="100%" frameborder="0" title="luma embed" style="border: none;"></iframe>
